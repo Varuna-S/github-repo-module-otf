@@ -6,9 +6,9 @@ language {
 
 terraform {
   required_providers {
-    aws = {
-      source  = "opentofu/aws"
-      version = "6.61.0"
+    github = {
+      source  = "opentofu/github"
+      version = "6.13.0"
     }
   }
 }
