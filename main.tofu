@@ -37,3 +37,38 @@ resource "github_repository_ruleset" "base" {
 
   }
 }
+
+resource "github_workflow_repository_permissions" "base" {
+  repository = var.repository_name
+
+  # Default workflow token permission must be read-only
+  default_workflow_permissions = "read"
+
+  # Workflows must not be allowed to approve pull requests
+  can_approve_pull_request_reviews = false
+}
+
+resource "github_repository_vulnerability_alerts" "base" {
+  # Repository must have vulnerability alerts enabled
+  repository = var.repository_name
+
+  enabled = true
+}
+
+resource "github_actions_repository_permissions" "base" {
+  repository = var.repository_name
+
+  enabled = true
+
+  allowed_actions = "selected"
+  allowed_actions_config {
+    # Allow GitHub-owned actions
+    github_owned_allowed = true
+
+    # Allow specific actions by pattern
+    # patterns_allowed = []
+
+    # Allow Marketplace-verified actions
+    verified_allowed = true
+  }
+}
