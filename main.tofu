@@ -60,6 +60,8 @@ resource "github_actions_repository_permissions" "base" {
 
   enabled = true
 
+  sha_pinning_required = var.sha_pinning_required
+
   allowed_actions = "selected"
   allowed_actions_config {
     # Allow GitHub-owned actions

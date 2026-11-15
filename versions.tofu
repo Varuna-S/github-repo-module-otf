@@ -8,7 +8,7 @@ terraform {
   required_providers {
     github = {
       source  = "opentofu/github"
-      version = "6.13.0"
+      version = ">=6.13.0, <7.0.0"
     }
   }
 }
