@@ -46,10 +46,10 @@ and limits liability.
 
 ## Scope
 
-**In scope** — defects in the OpenTofu modules and configuration published in
-this repository. For example: a module that provisions an over-permissive
-service control policy, creates an unintentionally public resource, or grants
-an IAM role more privilege than documented.
+**In scope** — defects in the OpenTofu module published in this repository.
+For example: a ruleset that leaves the default branch open to force pushes or
+deletion, a workflow token granted more permission than documented, or an
+Actions policy that lets unverified third-party actions run.
 
 **Out of scope**
 
